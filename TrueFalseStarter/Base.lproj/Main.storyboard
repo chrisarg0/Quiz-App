@@ -211,9 +211,15 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="buttonFour" destination="AS4-HX-g9f" id="FAj-ay-Mi5"/>
+                        <outlet property="buttonOne" destination="qMf-rE-kYg" id="Pep-eZ-Iu3"/>
+                        <outlet property="buttonThree" destination="J1V-MS-ECi" id="bkk-bv-4SP"/>
+                        <outlet property="buttonTwo" destination="smz-36-qWm" id="1a6-ZM-lQn"/>
+                        <outlet property="correctIncorrectResponse" destination="Odo-tZ-vtS" id="K83-dA-lNY"/>
                         <outlet property="falseButton" destination="AS4-HX-g9f" id="Xfj-Ws-1ey"/>
+                        <outlet property="playAgain" destination="K17-uy-MvB" id="vH7-WK-9Sk"/>
                         <outlet property="playAgainButton" destination="K17-uy-MvB" id="0Bx-Cm-ye0"/>
-                        <outlet property="questionField" destination="I3V-ih-1Ky" id="7UI-o2-ATi"/>
+                        <outlet property="questionField" destination="I3V-ih-1Ky" id="Tkg-yC-3Ea"/>
                         <outlet property="trueButton" destination="J1V-MS-ECi" id="iZW-hy-ROl"/>
                     </connections>
                 </viewController>
