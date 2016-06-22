@@ -9,6 +9,7 @@
 import UIKit
 import GameKit
 import AudioToolbox
+import QuartzCore
 
 class ViewController: UIViewController {
     
@@ -34,6 +35,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        trueButton.layer.cornerRadius = 10
+        trueButton.clipsToBounds = true
         loadGameStartSound()
         // Start game
         playGameStartSound()

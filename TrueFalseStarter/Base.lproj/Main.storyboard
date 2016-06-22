@@ -29,7 +29,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="True"/>
+                                <state key="normal" title="Button1"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="8OJ-vc-gc8"/>
@@ -39,29 +39,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="22R-qH-UNE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smz-36-qWm" userLabel="Answer2">
-                                <rect key="frame" x="45" y="235" width="510" height="54"/>
-                                <color key="backgroundColor" red="0.047058823530000002" green="0.47450980390000003" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="54" id="LBB-oh-vTc"/>
-                                    <constraint firstAttribute="height" constant="54" id="UzS-VS-8mG"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="hCp-Kk-p3A"/>
-                                    <constraint firstAttribute="height" constant="54" id="uav-7c-d5z"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="True"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="LBB-oh-vTc"/>
-                                        <exclude reference="hCp-Kk-p3A"/>
-                                        <exclude reference="uav-7c-d5z"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ioY-yg-szP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1V-MS-ECi" userLabel="Answer3">
@@ -75,7 +52,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="True"/>
+                                <state key="normal" title="Button3"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="8ju-nv-fNO"/>
@@ -96,7 +73,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="False"/>
+                                <state key="normal" title="Button4"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="rOq-bF-hse"/>
@@ -139,6 +116,29 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smz-36-qWm" userLabel="Answer2">
+                                <rect key="frame" x="45" y="235" width="510" height="54"/>
+                                <color key="backgroundColor" red="0.047058823530000002" green="0.47450980390000003" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="54" id="LBB-oh-vTc"/>
+                                    <constraint firstAttribute="height" constant="54" id="UzS-VS-8mG"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="hCp-Kk-p3A"/>
+                                    <constraint firstAttribute="height" constant="54" id="uav-7c-d5z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Button2"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LBB-oh-vTc"/>
+                                        <exclude reference="hCp-Kk-p3A"/>
+                                        <exclude reference="uav-7c-d5z"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ioY-yg-szP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.031372549019607843" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
