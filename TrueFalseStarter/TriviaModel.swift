@@ -26,73 +26,74 @@ class Questions {
     }
 }
 
-let question1 = Questions(question: "This was the only US President to serve more than two consecutive terms.",
-                          option1: "George Washington",
-                          option2: "Franklin D. Roosevelt",
-                          option3: "Woodrow Wilson",
-                          option4: "Andrew Jackson",
-                          answer: "Franklin D. Roosevelt")
+let question1 = Questions(question: "Who does Oberyn Martell seek revenge for?",
+                          option1: "His wife",
+                          option2: "His daughter",
+                          option3: "His sister",
+                          option4: "His mother",
+                          answer: "His sister")
 
-let question2 = Questions(question: "Which of the following countries has the most residents?",
-                          option1: "Nigeria",
-                          option2: "Russia",
-                          option3: "Iran",
-                          option4: "Vietnam",
-                          answer: "Nigeria")
+let question2 = Questions(question: "Who killed Jon Arryn?",
+                          option1: "Cerci Lannister",
+                          option2: "Petyr Baelish",
+                          option3: "Lysa Arryn",
+                          option4: "Jaime Lannister",
+                          answer: "Lysa Arryn")
 
-let question3 = Questions(question: "In what year was the United Nations founded?",
-                          option1: "1918",
-                          option2: "1919",
-                          option3: "1945",
-                          option4: "1954",
-                          answer: "1945")
+let question3 = Questions(question: "What signaled Khal Drogo's undefeated glory to the Dothraki?",
+                          option1: "The size of his khalasar",
+                          option2: "The length of his hair",
+                          option3: "The paint on his chest",
+                          option4: "The number of his horses",
+                          answer: "The length of his hair")
 
-let question4 = Questions(question: "The Titanic departed from the United Kingdom, where was it supposed to arrive?",
-                          option1: "Paris",
-                          option2: "Washington D.C.",
-                          option3: "New York City",
-                          option4: "Boston",
-                          answer: "New York City")
+let question4 = Questions(question: "Who said, 'If we die, we die. But first, we'll live'?",
+                          option1: "Shae",
+                          option2: "Tyrion Lannister",
+                          option3: "Ygritte",
+                          option4: "Bronn",
+                          answer: "Ygritte")
 
-let question5 = Questions(question: "Which nation produces the most oil?",
-                          option1: "Iran",
-                          option2: "Iraq",
-                          option3: "Brazil",
-                          option4: "Canada",
-                          answer: "Canada")
+let question5 = Questions(question: "Who says, 'The worst ones always live'?",
+                          option1: "Sansa Stark",
+                          option2: "Arya Stark",
+                          option3: "Daenerys Targaryen",
+                          option4: "Cersei Lannister",
+                          answer: "Sansa Stark")
 
-let question6 = Questions(question: "Which country has most recently won consecutive World Cups in Soccer?",
-                          option1: "Italy",
-                          option2: "Brazil",
-                          option3: "Argentina",
-                          option4: "Spain",
-                          answer: "Brazil")
+let question6 = Questions(question: "Who has never been on the small council?",
+                          option1: "Olenna Tyrell",
+                          option2: "Mace Tyrell",
+                          option3: "Cersei Lannister",
+                          option4: "Renly Baratheon",
+                          answer: "Olenna Tyrell")
 
-let question7 = Questions(question: "Which of the following rivers is longest?",
-                          option1: "Yangtze",
-                          option2: "Mississippi",
-                          option3: "Congo",
-                          option4: "Mekong",
-                          answer: "Mississippi")
+let question7 = Questions(question: "Who saves Sansa Stark during the riot of King's Landing?",
+                          option1: "Tyrion Lannister",
+                          option2: "The Hound",
+                          option3: "Joffrey Baratheon",
+                          option4: "Petyr Baelish",
+                          answer: "The Hound")
 
-let question8 = Questions(question: "Which city is the oldest?",
-                          option1: "Mexico City",
-                          option2: "Cape Town",
-                          option3: "San Juan",
-                          option4: "Sydney",
-                          answer: "Mexico City")
+let question8 = Questions(question: "Where is the Iron Bank?",
+                          option1: "Braavos",
+                          option2: "Highgarden",
+                          option3: "Pyke",
+                          option4: "Dorne",
+                          answer: "Braavos")
 
-let question9 = Questions(question: "Which country was the first to allow women to vote in national elections?",
-                          option1: "Poland",
-                          option2: "United States",
-                          option3: "Sweden",
-                          option4: "Senegal",
-                          answer: "Poland")
+let question9 = Questions(question: "What can definitely kill a White Walker?",
+                          option1: "Sunlight",
+                          option2: "Dragon Fire",
+                          option3: "Iron",
+                          option4: "Dragonglass",
+                          answer: "Dragonglass")
 
-let question10 = Questions(question: "Which of these countries won the most medals in the 2012 Summer Games?",
-                          option1: "France",
-                          option2: "Germany",
-                          option3: "Japan",
-                          option4: "Great Britain",
-                          answer: "Great Britain")
+let question10 = Questions(question: "Who is NOT on Arya Stark's list?",
+                          option1: "Ilyn Payne",
+                          option2: "Cersei Lannister",
+                          option3: "Varys",
+                          option4: "Joffrey Baratheon",
+                          answer: "Varys")
 
+var allQuestions = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10]

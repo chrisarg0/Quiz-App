@@ -13,19 +13,14 @@ import QuartzCore
 
 class ViewController: UIViewController {
     
-    let questionsPerRound = 4
+    let questionsPerRound = allQuestions.count
     var questionsAsked = 0
     var correctQuestions = 0
     var indexOfSelectedQuestion: Int = 0
     
-    var gameSound: SystemSoundID = 0
+    let normalButton = UIColor(red:0.05, green:0.43, blue:0.55, alpha:1.0)
     
-    let trivia: [[String : String]] = [
-        ["Question": "Only female koalas can whistle", "Answer": "False"],
-        ["Question": "Blue whales are technically whales", "Answer": "True"],
-        ["Question": "Camels are cannibalistic", "Answer": "False"],
-        ["Question": "All ducks are birds", "Answer": "True"]
-    ]
+    var gameSound: SystemSoundID = 0
     
     @IBOutlet weak var questionField: UILabel!
     @IBOutlet weak var correctIncorrectResponse: UILabel!
@@ -34,10 +29,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonThree: UIButton!
     @IBOutlet weak var buttonFour: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Start game
+        loadGameStartSound()
+        playGameStartSound()
+        displayQuestion()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func displayQuestion() {
+        
+        buttonOne.backgroundColor = normalButton
+        buttonTwo.backgroundColor = normalButton
+        buttonThree.backgroundColor = normalButton
+        buttonFour.backgroundColor = normalButton
+        
+        buttonOne.userInteractionEnabled = true
+        buttonTwo.userInteractionEnabled = true
+        buttonThree.userInteractionEnabled = true
+        buttonFour.userInteractionEnabled = true
         
         // button design change
         buttonOne.layer.cornerRadius = 10
@@ -51,51 +68,73 @@ class ViewController: UIViewController {
         playAgainButton.layer.cornerRadius = 10
         playAgainButton.clipsToBounds = true
         
-        loadGameStartSound()
-        // Start game
-        playGameStartSound()
-        displayQuestion()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func displayQuestion() {
-        indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextIntWithUpperBound(trivia.count)
-        let questionDictionary = trivia[indexOfSelectedQuestion]
-        questionField.text = questionDictionary["Question"]
-        playAgainButton.hidden = true
+        if questionsAsked <= questionsPerRound {
+            questionsAsked += 1
+            
+            for _ in allQuestions {
+            
+            indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextIntWithUpperBound(allQuestions.count)
+            
+            let questionDictionary = allQuestions[indexOfSelectedQuestion]
+                
+            // set values for question and buttons
+            questionField.text = questionDictionary.question
+            correctIncorrectResponse.hidden = true
+            buttonOne.setTitle(questionDictionary.option1, forState: UIControlState.Normal)
+            buttonTwo.setTitle(questionDictionary.option2, forState: UIControlState.Normal)
+            buttonThree.setTitle(questionDictionary.option3, forState: UIControlState.Normal)
+            buttonFour.setTitle(questionDictionary.option4, forState: UIControlState.Normal)
+            playAgainButton.hidden = true
+            }
+        }
     }
     
     func displayScore() {
         // Hide the answer buttons
+        questionField.hidden = true
         buttonOne.hidden = true
         buttonTwo.hidden = true
+        buttonThree.hidden = true
+        buttonFour.hidden = true
         
         // Display play again button
+        correctIncorrectResponse.hidden = false
         playAgainButton.hidden = false
         
-        questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(questionsPerRound) correct!"
-        
+        correctIncorrectResponse.font = UIFont (name: "HelveticaNeue-Bold", size: 30)
+        correctIncorrectResponse.text = "Way to go!\nYou got \(correctQuestions) out of \(questionsPerRound) correct!"
     }
     
     @IBAction func checkAnswer(sender: UIButton) {
-        // Increment the questions asked counter
-        questionsAsked += 1
         
-        let selectedQuestionDict = trivia[indexOfSelectedQuestion]
-        let correctAnswer = selectedQuestionDict["Answer"]
+        let selectedQuestionDict = allQuestions[indexOfSelectedQuestion]
+        let correctAnswer = selectedQuestionDict.answer
         
-        if (sender === buttonOne &&  correctAnswer == "True") || (sender === buttonTwo && correctAnswer == "False") {
+        allQuestions.removeAtIndex(indexOfSelectedQuestion)
+        
+        buttonOne.userInteractionEnabled = true
+        buttonTwo.userInteractionEnabled = true
+        buttonThree.userInteractionEnabled = true
+        buttonFour.userInteractionEnabled = true
+        
+        if sender.titleLabel!.text == correctAnswer {
+
             correctQuestions += 1
-            questionField.text = "Correct!"
+            correctIncorrectResponse.hidden = false
+            correctIncorrectResponse.font = UIFont (name: "HelveticaNeue-Bold", size: 20)
+            correctIncorrectResponse.text = "Correct!"
+            correctIncorrectResponse.textColor = UIColor(red:0.00, green:0.54, blue:0.49, alpha:1.0)
+
+            sender.titleLabel?.textColor = UIColor.whiteColor()
+            loadNextRoundWithDelay(seconds: 2)
         } else {
-            questionField.text = "Sorry, wrong answer!"
+            
+            correctIncorrectResponse.hidden = false
+            correctIncorrectResponse.font = UIFont (name: "HelveticaNeue-Bold", size: 15)
+            correctIncorrectResponse.text = "Sorry, wrong answer!\nThe answer is '\(correctAnswer)'."
+            correctIncorrectResponse.textColor = UIColor.orangeColor()
+            loadNextRoundWithDelay(seconds: 2)
         }
-        
-        loadNextRoundWithDelay(seconds: 2)
     }
     
     func nextRound() {
@@ -110,8 +149,15 @@ class ViewController: UIViewController {
     
     @IBAction func playAgain() {
         // Show the answer buttons
+        questionField.hidden = false
         buttonOne.hidden = false
         buttonTwo.hidden = false
+        buttonThree.hidden = false
+        buttonFour.hidden = false
+        
+        correctIncorrectResponse.hidden = true
+        playAgainButton.hidden = true
+
         
         questionsAsked = 0
         correctQuestions = 0
