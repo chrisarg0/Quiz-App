@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     var questionsAsked = 0
     var correctQuestions = 0
     var indexOfSelectedQuestion: Int = 0
-    var name = "Chris"
     
     let normalButton = UIColor(red:0.05, green:0.43, blue:0.55, alpha:1.0)
     
